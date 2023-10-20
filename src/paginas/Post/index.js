@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import posts from 'json/posts.json'
 import PostModelo from "componentes/PostModelo";
 import ReactMarkdown from 'react-markdown'
@@ -12,6 +12,16 @@ export default function Post(){
         return post.id === Number(param.id)
     })
 
+    if (!post){
+        return (
+            <>
+               <h1>Post não encontrado</h1>
+               <Link to='/'>
+                    Volte ao início
+               </Link>
+            </>
+        )    
+    }
 
 
     return (
