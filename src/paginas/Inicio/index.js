@@ -3,7 +3,7 @@ import posts from 'json/posts.json'
 import Post from "componentes/Post";
 
 export default function Inicio () {
-    console.log(posts)
+
     return(
         <ul className={styles.posts}>
             {posts.map((post)=>(
